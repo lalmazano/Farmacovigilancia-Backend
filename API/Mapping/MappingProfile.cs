@@ -16,6 +16,8 @@ namespace Api.Mapping
             CreateMap<HistorialMedico, HistorialMedico>().ReverseMap();
             CreateMap<EfectoAdverso, EfectoAdverso> ().ReverseMap();
             CreateMap<DetalleRecetum, DetalleRecetum> ().ReverseMap();
+            CreateMap<CrearEfectoAdversoDto, EfectoAdverso>().ReverseMap();
+            CreateMap<EfectoAdverso, CrearEfectoAdversoDto >().ReverseMap();
 
         }
     }

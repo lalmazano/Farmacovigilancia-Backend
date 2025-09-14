@@ -34,7 +34,7 @@ namespace Api.Controllers.Template
             return Ok(result);
         }
 
-
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] TDto dto)
         {

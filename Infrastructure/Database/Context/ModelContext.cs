@@ -204,7 +204,7 @@ public partial class ModelContext : DbContext
                 .IsFixedLength()
                 .HasColumnName("AJUSTE_DOSIS");
             entity.Property(e => e.Descripcion)
-                .HasColumnType("CLOB")
+                .HasColumnType("VARCHAR2")
                 .HasColumnName("DESCRIPCION");
             entity.Property(e => e.Dosis)
                 .HasMaxLength(50)
@@ -255,7 +255,7 @@ public partial class ModelContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("REGISTRO_SANITARIO");
             entity.Property(e => e.Suspension)
-                .HasMaxLength(1)
+                .HasMaxLength(50)
                 .IsUnicode(false)
                 .IsFixedLength()
                 .HasColumnName("SUSPENSION");

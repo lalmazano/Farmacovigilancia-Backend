@@ -13,15 +13,15 @@ public partial class EfectoAdverso
 
     public DateTime FechaReporte { get; set; }
 
-    public string Descripcion { get; set; } = null!;
+    public string? Descripcion { get; set; } = null!;
 
-    public string Gravedad { get; set; } = null!;
+    public string? Gravedad { get; set; } 
 
-    public string Lote { get; set; } = null!;
+    public string? Lote { get; set; } = null!;
 
-    public string Laboratorio { get; set; } = null!;
+    public string? Laboratorio { get; set; } = null!;
 
-    public string RegistroSanitario { get; set; } = null!;
+    public string? RegistroSanitario { get; set; }
 
     public DateTime FechaVencimiento { get; set; }
 
