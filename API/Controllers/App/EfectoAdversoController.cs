@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers.App
 {
     [Route("api/[controller]")]
-    public class EfectoAdversoController : BaseController<CrearEfectoAdversoDto>
+    public class EfectoAdversoController : BaseController<EfectoAdverso>
     {
         public EfectoAdversoController(IEfectoAdversoService service) : base(service) { }
     }

@@ -7,7 +7,7 @@ using Infrastructure.Repositories.Interface;
 
 namespace Application.Services
 {
-    public class EfectoAdversoService : ServiceBase<CrearEfectoAdversoDto, EfectoAdverso>, IEfectoAdversoService
+    public class EfectoAdversoService : ServiceBase<EfectoAdverso, EfectoAdverso>, IEfectoAdversoService
     {
         private readonly IEfectoAdversoRepository _repo;
 
@@ -16,7 +16,7 @@ namespace Application.Services
         {
             _repo = repo;
         }
-        public override async Task AddAsync(CrearEfectoAdversoDto dto)
+        public override async Task AddAsync(EfectoAdverso dto)
         {
             var ultimo = await _repo.GetLastAsync(u => u.IdEfecto);
             var nuevoId = (ultimo?.IdEfecto ?? 0) + 1;
@@ -24,24 +24,24 @@ namespace Application.Services
             var entity = new EfectoAdverso
             {
                 IdEfecto = nuevoId,
-                IdPaciente = dto.idPaciente,
-                IdMedicamento = dto.idMedicamento,
-                FechaReporte = dto.fechaReporte,
-                Descripcion = dto.descripcion,
-                Gravedad = dto.gravedad,
-                Lote = dto.lote,
-                Laboratorio = dto.laboratorio,
-                RegistroSanitario = dto.registroSanitario,
-                FechaVencimiento = dto.fechaVencimiento,
-                Dosis = dto.dosis,
-                FechaInicioEfecto = dto.fechaInicioEfecto,
-                FechaFinEfecto = dto.fechaFinEfecto,
-                ViaAdministracion = dto.viaAdministracion,
-                MedidasTomadas = dto.medidasTomadas,
-                Suspension = dto.suspension,     
-                FechaSuspension = dto.fechaSuspension,
-                AjusteDosis = dto.ajusteDosis,    // string
-                DosisActual = dto.dosisActual
+                IdPaciente = dto.IdPaciente,
+                IdMedicamento = dto.IdMedicamento,
+                FechaReporte = dto.FechaReporte,
+                Descripcion = dto.Descripcion,
+                Gravedad = dto.Gravedad,
+                Lote = dto.Lote,
+                Laboratorio = dto.Laboratorio,
+                RegistroSanitario = dto.RegistroSanitario,
+                FechaVencimiento = dto.FechaVencimiento,
+                Dosis = dto.Dosis,
+                FechaInicioEfecto = dto.FechaInicioEfecto,
+                FechaFinEfecto = dto.FechaFinEfecto,
+                ViaAdministracion = dto.ViaAdministracion,
+                MedidasTomadas = dto.MedidasTomadas,
+                Suspension = dto.Suspension,     
+                FechaSuspension = dto.FechaSuspension,
+                AjusteDosis = dto.AjusteDosis,    // string
+                DosisActual = dto.DosisActual
             };
 
             await _repo.AddAsync(entity);

@@ -20,6 +20,23 @@ namespace Application.Services
         {
             _repo = repo;
         }
+
+        public override async Task AddAsync(Paciente dto)
+        {
+            var ultimo = await _repo.GetLastAsync(u => u.IdPaciente);
+            var nuevoId = (ultimo?.IdPaciente ?? 0) + 1;
+
+            var entity = new Paciente
+            {
+                IdPaciente= dto.IdPaciente,
+                Nombre = dto.Nombre,
+                FechaNacimiento = dto.FechaNacimiento,
+                Genero = dto.Genero,
+                Contacto = dto.Contacto
+            };
+
+            await _repo.AddAsync(entity);
+        }
+
     }
 }
-

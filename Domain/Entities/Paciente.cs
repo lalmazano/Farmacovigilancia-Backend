@@ -11,6 +11,8 @@ public partial class Paciente
 
     public DateTime FechaNacimiento { get; set; }
 
+    public long DPI { get; set; }
+
     public string Genero { get; set; } = null!;
 
     public string Contacto { get; set; } = null!;

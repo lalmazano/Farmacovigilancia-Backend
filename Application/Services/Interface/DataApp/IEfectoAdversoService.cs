@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Application.Services.Interface
 {
-    public interface IEfectoAdversoService : IServiceBase<CrearEfectoAdversoDto>
+    public interface IEfectoAdversoService : IServiceBase<EfectoAdverso>
     {
     }
 }

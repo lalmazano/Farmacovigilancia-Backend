@@ -2,6 +2,7 @@
 using Infrastructure.Database.Context;
 using Infrastructure.Repositories.Interface;
 using Infrastructure.Repositories.Template;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,15 @@ namespace Infrastructure.Repositories
       : base(queryContext, operationContext)
         {
         }
+
+        public override async Task<IEnumerable<EfectoAdverso>> GetAllAsync()
+        {
+            return await _queryContext.EfectoAdversos
+                .Include(m => m.IdMedicamentoNavigation)
+                .Include(e => e.IdPacienteNavigation)
+                .ToListAsync();
+        }
+
     }
 }
 

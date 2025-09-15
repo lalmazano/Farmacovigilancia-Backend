@@ -133,7 +133,12 @@ builder.Services.AddAuthorization(options =>
 //-------------------------------------------------------------------------------------------------------------------------------------------------------//
 #endregion
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+        .AddJsonOptions(opt =>
+         {
+             opt.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+             opt.JsonSerializerOptions.WriteIndented = true;
+         });
 builder.Services.AddEndpointsApiExplorer();
 
 #region Configuriacion Swager 
