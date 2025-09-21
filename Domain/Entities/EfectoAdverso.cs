@@ -5,11 +5,11 @@ namespace Domain.Entities;
 
 public partial class EfectoAdverso
 {
-    public int IdEfecto { get; set; }
+    public decimal IdEfecto { get; set; }
 
-    public long? IdPaciente { get; set; }
+    public decimal? IdPaciente { get; set; }
 
-    public int? IdMedicamento { get; set; }
+    public decimal? IdMedicamento { get; set; }
 
     public DateTime FechaReporte { get; set; }
 

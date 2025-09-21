@@ -5,7 +5,7 @@ namespace Domain.Entities;
 
 public partial class Medicamento
 {
-    public int IdMedicamento { get; set; }
+    public decimal IdMedicamento { get; set; }
 
     public string Nombre { get; set; } = null!;
 
@@ -15,7 +15,7 @@ public partial class Medicamento
 
     public string Contraindicaciones { get; set; } = null!;
 
-    public DateTime FechaRegistro { get; set; }
+    public DateTime? FechaRegistro { get; set; }
 
     public virtual ICollection<DetalleRecetum> DetalleReceta { get; set; } = new List<DetalleRecetum>();
 

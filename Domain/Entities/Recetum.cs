@@ -5,11 +5,11 @@ namespace Domain.Entities;
 
 public partial class Recetum
 {
-    public int IdReceta { get; set; }
+    public decimal IdReceta { get; set; }
 
-    public long? IdPaciente { get; set; }
+    public decimal? IdPaciente { get; set; }
 
-    public long? IdMedico { get; set; }
+    public decimal? IdMedico { get; set; }
 
     public DateTime FechaEmision { get; set; }
 

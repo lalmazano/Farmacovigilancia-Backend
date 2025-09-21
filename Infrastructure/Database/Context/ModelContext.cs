@@ -346,6 +346,10 @@ public partial class ModelContext : DbContext
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("CONTACTO");
+            entity.Property(e => e.dpi)
+                .HasPrecision(19)
+                .ValueGeneratedNever()
+                .HasColumnName("DPI");
             entity.Property(e => e.FechaNacimiento)
                 .HasColumnType("DATE")
                 .HasColumnName("FECHA_NACIMIENTO");

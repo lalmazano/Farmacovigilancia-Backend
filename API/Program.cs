@@ -184,7 +184,7 @@ if (app.Environment.IsDevelopment())
 app.MapGet("/", () => Results.Json(new { Version = "1.0.0" })).AllowAnonymous(); ;
 app.UseCors("AllowAllOrigins");
 app.UseHttpsRedirection();
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 app.Run();

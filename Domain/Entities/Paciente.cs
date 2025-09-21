@@ -5,13 +5,13 @@ namespace Domain.Entities;
 
 public partial class Paciente
 {
-    public long IdPaciente { get; set; }
+    public decimal IdPaciente { get; set; }
 
     public string Nombre { get; set; } = null!;
 
     public DateTime FechaNacimiento { get; set; }
 
-    public long DPI { get; set; }
+    public decimal? dpi { get; set; }
 
     public string Genero { get; set; } = null!;
 

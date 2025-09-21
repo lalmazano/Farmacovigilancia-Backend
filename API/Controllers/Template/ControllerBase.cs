@@ -15,7 +15,6 @@ namespace Api.Controllers.Template
             _service = service;
         }
 
-        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
