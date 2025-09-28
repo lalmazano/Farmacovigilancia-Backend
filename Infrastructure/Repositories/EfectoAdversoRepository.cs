@@ -23,6 +23,7 @@ namespace Infrastructure.Repositories
             return await _queryContext.EfectoAdversos
                 .Include(m => m.IdMedicamentoNavigation)
                 .Include(e => e.IdPacienteNavigation)
+                .OrderByDescending(r => r.IdEfecto)
                 .ToListAsync();
         }
 
