@@ -38,8 +38,27 @@ namespace Api.Controllers.Template
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] TDto dto)
         {
-            await _service.AddAsync(dto);
-            return CreatedAtAction(nameof(GetById), new { id = GetId(dto) }, dto);
+            try
+            {
+                await _service.AddAsync(dto);
+                return CreatedAtAction(nameof(GetById), new { id = GetId(dto) }, dto);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (InvalidOperationException ex)
+            {
+                return Conflict(new { message = ex.Message });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new { message = "Ocurrió un error inesperado." });
+            }
         }
 
 

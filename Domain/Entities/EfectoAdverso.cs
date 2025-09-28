@@ -9,6 +9,7 @@ public partial class EfectoAdverso
 
     public decimal? IdPaciente { get; set; }
 
+    public decimal? dpi { get; set; }
     public decimal? IdMedicamento { get; set; }
 
     public DateTime FechaReporte { get; set; }

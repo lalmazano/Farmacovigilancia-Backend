@@ -198,6 +198,10 @@ public partial class ModelContext : DbContext
                 .HasPrecision(10)
                 .ValueGeneratedNever()
                 .HasColumnName("ID_EFECTO");
+            entity.Property(e => e.dpi)
+                .HasPrecision(19)
+                .ValueGeneratedNever()
+                .HasColumnName("DPI");
             entity.Property(e => e.AjusteDosis)
                 .HasMaxLength(1)
                 .IsUnicode(false)

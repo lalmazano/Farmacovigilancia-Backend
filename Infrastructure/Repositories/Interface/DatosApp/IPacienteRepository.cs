@@ -10,5 +10,6 @@ namespace Infrastructure.Repositories.Interface
 {
     public interface IPacienteRepository : IRepositoryBase<Paciente>
     {
+        Task<Paciente?> GetByDpi(decimal? dpi);
     }
 }
