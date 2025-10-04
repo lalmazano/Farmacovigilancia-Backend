@@ -13,6 +13,7 @@ using Infrastructure.Repositories.Interface;
 using Infrastructure.Repositories;
 using Api.Mapping;
 using Microsoft.Extensions.DependencyInjection;
+using Shared.Reports;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -38,6 +39,8 @@ builder.Services.AddScoped<IUserRolService, UserRolService>();
 builder.Services.AddScoped<IDataEncriptada, DataEncriptada>();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddScoped<IReporteSSRS, ReporteSSRS>();
+builder.Services.AddScoped<IReporteriaService, ReporteriaService>();
 //Servicios de la App
 builder.Services.AddScoped<IRecetaService, RecetaService>();
 builder.Services.AddScoped<IPacienteService, PacienteService>();
