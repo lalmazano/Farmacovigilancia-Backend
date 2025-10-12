@@ -2,6 +2,7 @@
 using Infrastructure.Database.Context;
 using Infrastructure.Repositories.Interface;
 using Infrastructure.Repositories.Template;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,13 @@ namespace Infrastructure.Repositories
         public MedicamentoRepository(QueryContext queryContext, OperationContext operationContext)
             : base(queryContext, operationContext)
         {
+        }
+
+        public override async Task<IEnumerable<Medicamento>> GetAllAsync()
+        {
+            return await _queryContext.Medicamentos
+                .OrderBy(r => r.IdMedicamento)
+                .ToListAsync();
         }
     }
 }
